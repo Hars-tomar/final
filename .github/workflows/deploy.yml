@@ -21,10 +21,10 @@ jobs:
 
       - name: Log in to Amazon ECR
         run: |
-          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 381491999801.dkr.ecr.us-east-1.amazonaws.com
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 423623824718.dkr.ecr.us-east-1.amazonaws.com/final
 
       - name: Build and Push Docker Image
         run: |
           docker build -t final-api .
-          docker tag final-api:latest 381491999801.dkr.ecr.us-east-1.amazonaws.com/final-test-api:latest
-          docker push 381491999801.dkr.ecr.us-east-1.amazonaws.com/final-test-api:latest 
+          docker tag final-api:latest 423623824718.dkr.ecr.us-east-1.amazonaws.com/final:latest
+          docker push 423623824718.dkr.ecr.us-east-1.amazonaws.com/final:latest 
